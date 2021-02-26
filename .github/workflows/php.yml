@@ -1,4 +1,4 @@
-name: PHP Composer
+name: PHP Composer Test
 
 on:
   pull_request:
@@ -23,8 +23,7 @@ jobs:
       run: |
         sudo apt-get update
         echo "Available Docker Libraries:" && apt-cache search docker | sort
-        echo "Libraries 'docker-compose': installing ..." && sudo apt-get install docker-compose   
-    
+        echo "Library 'docker-compose': installing ..." && sudo apt-get install docker-engine docker.io docker-compose   
     
     - uses: actions/checkout@v2
 
