@@ -15,7 +15,7 @@ jobs:
     # List all installed PHP Libraries
     - name: List all installed PHP Libraries
       run: |
-        dpkg --get-selections | grep -iE (php|pear) | sort
+        dpkg --get-selections | grep -iE "(php|pear)" | sort
         dpkg --get-selections | grep -i docker | sort
         
     # Install missing PHP Libraries
