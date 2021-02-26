@@ -16,14 +16,14 @@ jobs:
     - name: List all installed PHP Libraries
       run: |
         echo "Installed PHP Libraries:" && dpkg --get-selections | grep -iE "(php|pear)" | sort
-        echo "Installed Docker Libraries:" && dpkg --get-selections | grep -i docker | sort
+        echo "Installed Docker Libraries:" && dpkg --get-selections | grep -iE (docker|container)" | sort
         
     # Install missing PHP Libraries
     - name: Install docker-compose Library
       run: |
         sudo apt-get update
         echo "Available Docker Libraries:" && apt-cache search docker | sort
-        echo "Library 'docker-compose': installing ..." && sudo apt-get install docker-engine docker.io docker-compose   
+        echo "Library 'docker-compose': installing ..." && sudo apt-get install docker-engine docker-compose   
     
     - uses: actions/checkout@v2
 
